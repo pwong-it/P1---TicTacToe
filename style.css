@@ -19,6 +19,25 @@ body {
     margin: 0 auto;
 }
 
+main {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+}
+
+.playerOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.playerTwo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 div {
     border: 1px solid black;
     height: 150px;

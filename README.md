@@ -73,12 +73,32 @@ Use the Problem Solving Process framework to break down the project into managea
     - Test each one to make sure the elements are able to "listen" to the click. 
 
     Part TWO
-    - There are two players. And the turns alternate between the two players. The game will run on a for loop until someone wins, or there is a draw
+    - There are two players. Add html elements in.
+    ![Progress-2](./images/progress_2.png)
+    - The turns alternate between the two players. The game will run on a for loop until someone wins, or there is a draw
     - The maximum number of turns in this game is 9 turns. (in the for loop, i = 1; i < 10; i++)
     - Since it is alternating turns, playerOne will start first. (i) will represent the turn. 
     - We will need the modulus operator where even number (i) will be playerTwo's turn. i % 2 === 0
     - We will hard code playerOne as "X", playerTwo as "O" for now. 
     - An "if" statement is required to put this together. If (i) is odd, it is playerOne's turn, and whichever grid is clicked, it will turn "X". If (i) is even, it will be playerTwo's turn and the grid clicked will turn "O".
+    ```
+    // for (var turn = 1; turn < 10; turn++) {
+    //     if (turn % 2 === 0) {
+    //         console.log(turn)
+    //     } else {
+    //         console.log(turn)
+    //     }
+    // }
+    // The console has printed the turn numbers from 1 to 9 in order. So we know this is working fine. Now we can replace the turns with "X" and "O"
+    for (var turn = 1; turn < 10; turn++) {
+        if (turn % 2 === 0) {
+            console.log("O")
+        } else {
+            console.log("X")
+        }
+    }
+    ```
+    ![Progress-3](./images/progress_3.png)
 4.  Implement 
   
 
@@ -96,7 +116,8 @@ Use the Problem Solving Process framework to break down the project into managea
 - Buttons to not click too many times (cause its broken :unamused:)
 
 ## :sunglasses: Lessons learnt
-What I would do differently if I could wind back the clock...
+1.  `explorer.exe .` - To find where my sei folder is located on my computer. I needed this to place saved images into the project images folder. 
+2.  Use the browser console more - I was coding in VSC and then testing it. I would then check the elements and console. What I should be doing more of is typing into the console as there is instant feedback on what is actually happening. By doing this, I was able to grasp the concepts and understand the DOM a lot better.
 
 ## :white_check_mark: Future features
 Cool things I would add if I can keep working on this
