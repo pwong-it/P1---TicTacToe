@@ -18,7 +18,7 @@ The app that I am building must:
 - Deploy your game online, where the rest of the world can access it
 - Use semantic markup for HTML and CSS (adhere to best practices)
 
-### Necessary Deliverables
+### Necessary Deliverables (Minimum Viable Product)
 - At least one artefact of either pseudocode, flow diagram, wireframe demonstrating planning 
 - A working game, built by you, hosted somewhere on the internet
 - A link to your hosted working game in the URL section of your GitHub repo
@@ -38,10 +38,51 @@ The app that I am building must:
 ***I will be thinking of my own extras once I am at that stage. 
 
 ## :pencil2: Planning & Problem Solving
-- Talk about approach to the problem.
-- Add screenshots/drawings of doodles/plans during the planning phase.
-- Flow charts of app logic.
-![Planning Photo](https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)
+### General Plan
+![Planning Photo](./images/photo-sketch.jpg)
+Use the Problem Solving Process framework to break down the project into manageable components. From Technical Requirements & Necessary Deliverables
+1.  Keywords 
+    - Game will be on browser
+    - Switch Turns for players
+    - Logic for Winning
+    - Displaying which player won
+    - Separate HTML/CSS/JS files :white_check_mark:
+    - JS for DOM manipulation :white_check_mark:
+    - Deploy 
+    - Use semantic Markup
+2.  Requirements
+    - Two players. Player turns will alternate until game over.
+    - Grid columns and rows (via CSS)
+        - Each grid box will have individually declared ID
+    - Event Listeners to listen to user clicks
+        - After being clicked, the grid should have a new classList "X" or "O" depending on which player clicked. The changes will be linked to CSS styles
+    - Win condition is if 3 of the same symbol in a row
+        - Figure out all different scenarios of winning
+        - Will need an "if" statement to check if grids in a line (eg 1, 2, 3) have been changed to the same classList. If so, then game is won by that player.
+        - If there are no 3 grids in a row that have changed to the same classList after all the grids have been activated, then there is a DRAW.
+    - Display who wins at the end
+    - Stop any more clicks after the game is over. 
+        - Once game has stopped. Any further clicks in the grid will result in a message appearing on webpage. 
+        - Clicks will won't have any effect besides activating the message
+3.  Tasks (pseudo code in order)
+    Part ONE
+    - Create html, css, js files and link them together
+    - Set out basic HTML page. Have all elements ready for DOM manipulation. Heading and Grid at this stage. CSS will be needed for the grid. 
+    ![Progress-1](./images/progress_1.png)
+    - Declare each of the grids into variables using query selector
+    - Test each one to make sure the elements are able to "listen" to the click. 
+
+    Part TWO
+    - There are two players. And the turns alternate between the two players. The game will run on a for loop until someone wins, or there is a draw
+    - The maximum number of turns in this game is 9 turns. (in the for loop, i = 1; i < 10; i++)
+    - Since it is alternating turns, playerOne will start first. (i) will represent the turn. 
+    - We will need the modulus operator where even number (i) will be playerTwo's turn. i % 2 === 0
+    - We will hard code playerOne as "X", playerTwo as "O" for now. 
+    - An "if" statement is required to put this together. If (i) is odd, it is playerOne's turn, and whichever grid is clicked, it will turn "X". If (i) is even, it will be playerTwo's turn and the grid clicked will turn "O".
+4.  Implement 
+  
+
+
 
 ## :rocket: Cool tech
 - Programming languages

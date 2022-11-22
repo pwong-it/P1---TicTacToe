@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    border: 1px solid red;
+    margin: 0 auto;
+
+}
+
+header {
+    text-align: center;
+    margin: 50px;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+body {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+div {
+    border: 1px solid black;
+    height: 150px;
+    width: 150px;
+    background-color: white;
+    font-size: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.grid-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    max-width: 456px;
+    background-color: black;
+}
