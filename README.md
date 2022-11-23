@@ -1,5 +1,5 @@
 # Tic Tac Toe :x::o::x:
-The first project of my Software Engineering Immersive Course.<br/> 
+The first project of my Software Engineering Immersive Course. The goal is to build the beloved TicTacToe game where the aim is to have 3 of the same symbol in a line on the board to win.<br/> 
 Date Received: 22/11/22<br/>
 Date Due: 25/11/22
 
@@ -64,15 +64,15 @@ Use the Problem Solving Process framework to break down the project into managea
     - Stop any more clicks after the game is over. 
         - Once game has stopped. Any further clicks in the grid will result in a message appearing on webpage. 
         - Clicks will won't have any effect besides activating the message
-3.  Tasks (pseudo code in order)
-    Part ONE
+3.  Tasks (pseudo code in order)<br/>
+    Part ONE - Grid
     - Create html, css, js files and link them together
     - Set out basic HTML page. Have all elements ready for DOM manipulation. Heading and Grid at this stage. CSS will be needed for the grid. 
     ![Progress-1](./images/progress_1.png)
     - Declare each of the grids into variables using query selector
     - Test each one to make sure the elements are able to "listen" to the click. 
 
-    Part TWO
+    Part TWO - Players
     - There are two players. Add html elements in.
     ![Progress-2](./images/progress_2.png)
     - The turns alternate between the two players. The game will run on a for loop until someone wins, or there is a draw
@@ -99,6 +99,18 @@ Use the Problem Solving Process framework to break down the project into managea
     }
     ```
     ![Progress-3](./images/progress_3.png)
+    Image:Browser console log of the alternating turns.
+
+    Part THREE - Event Listener
+    - Create an event listener for the parent of the grid and declare new variables for the children as the event.target. 
+    - Make sure that the event does not activate if clicked outside of the whole grid (use if statement)
+    - Test the click first by changing the background colour.
+    ![Progress-4](./images/progress_4.png)
+    - Remove the numbers in the grids
+    - Instead, put "" so that it is empty
+    - We can change the textContent of the grid after the click. We will change it to "X" for now.
+    ![Progress-5](./images/progress_5.png)
+
 4.  Implement 
   
 
@@ -118,6 +130,7 @@ Use the Problem Solving Process framework to break down the project into managea
 ## :sunglasses: Lessons learnt
 1.  `explorer.exe .` - To find where my sei folder is located on my computer. I needed this to place saved images into the project images folder. 
 2.  Use the browser console more - I was coding in VSC and then testing it. I would then check the elements and console. What I should be doing more of is typing into the console as there is instant feedback on what is actually happening. By doing this, I was able to grasp the concepts and understand the DOM a lot better.
+3.  Tried looking how to caption images using Markdown on github. But not really anything particularly in-built. 
 
 ## :white_check_mark: Future features
 Cool things I would add if I can keep working on this
