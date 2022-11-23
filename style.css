@@ -19,7 +19,9 @@ body {
     margin: 0 auto;
 }
 
-main {
+main {}
+
+.game-section {
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
 }
@@ -47,7 +49,6 @@ div {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .grid-box {
@@ -56,4 +57,31 @@ div {
     gap: 1px;
     max-width: 456px;
     background-color: black;
+}
+
+.result-section {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-section h2 {
+    font-size: 2.5rem;
+}
+
+.before-game {
+    color: transparent;
+}
+
+.after-game {
+    color: black;
+}
+
+.symOne {
+    background-color: green;
+}
+
+.symTwo {
+    background-color: red;
 }

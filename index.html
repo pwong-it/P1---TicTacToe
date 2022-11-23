@@ -15,24 +15,30 @@
         <h1>Tic Tac Toe</h1>
     </header>
     <main>
-        <section class="playerOne">
-            <h1>X</h1>
-            <h2>Player One</h2>
+        <section class="game-section">
+            <section class="playerOne">
+                <h1>X</h1>
+                <h2>Player One</h2>
+            </section>
+            <section class="grid-box">
+                <div id="one" class="empty"></div>
+                <div id="two" class="empty"></div>
+                <div id="three" class="empty"></div>
+                <div id="four" class="empty"></div>
+                <div id="five" class="empty"></div>
+                <div id="six" class="empty"></div>
+                <div id="seven" class="empty"></div>
+                <div id="eight" class="empty"></div>
+                <div id="nine" class="empty"></div>
+            </section>
+            <section class="playerTwo">
+                <h1>O</h1>
+                <h2>Player Two</h2>
+            </section>
         </section>
-        <section class="grid-box">
-            <div id="one"></div>
-            <div id="two"></div>
-            <div id="three"></div>
-            <div id="four"></div>
-            <div id="five"></div>
-            <div id="six"></div>
-            <div id="seven"></div>
-            <div id="eight"></div>
-            <div id="nine"></div>
-        </section>
-        <section class="playerTwo">
-            <h1>O</h1>
-            <h2>Player Two</h2>
+
+        <section class="result-section">
+            <h2 id="end-message" class="before-game">It is a DRAW. Good Game Well played</h2>
         </section>
     </main>
     <footer>

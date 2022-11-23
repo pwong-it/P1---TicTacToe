@@ -3,7 +3,7 @@ The first project of my Software Engineering Immersive Course. The goal is to bu
 Date Received: 22/11/22<br/>
 Date Due: 25/11/22
 
-## :computer: [Click here](#) to see my live project!
+## :computer: [Click here](https://pwong-it.github.io/Project-1_TicTacToe/) to see my live project!
 
 ## :page_facing_up: About
 The below are the criteria set out by the course that I will need to meet:
@@ -42,8 +42,8 @@ The app that I am building must:
 ![Planning Photo](./images/photo-sketch.jpg)
 Use the Problem Solving Process framework to break down the project into manageable components. From Technical Requirements & Necessary Deliverables
 1.  Keywords 
-    - Game will be on browser
-    - Switch Turns for players
+    - Game will be on browser :white_check_mark:
+    - Switch Turns for players :white_check_mark:
     - Logic for Winning
     - Displaying which player won
     - Separate HTML/CSS/JS files :white_check_mark:
@@ -109,7 +109,27 @@ Use the Problem Solving Process framework to break down the project into managea
     - Remove the numbers in the grids
     - Instead, put "" so that it is empty
     - We can change the textContent of the grid after the click. We will change it to "X" for now.
+    ```
+    parent.addEventListener('click', function (event) {
+        var indGrid = event.target
+        indGrid.textContent = 'X'
+    })
+    ```
     ![Progress-5](./images/progress_5.png)
+
+    Part FOUR - Add Loop
+    - ~~Wrap the 'for' loop (previously established in part TWO) with the event listener. ~~
+    - A 'for' loop was not required. 
+    - Instead of console logging the turn number, change it so that it changes the textContent to the respective player's symbol "X" or "O"
+    - Once the loop finishes (when 9 turns are complete), there should be a message on the webpage that says the game is over. We won't have a winning condition for now.
+    - Console log the message first and make sure it will work once all grids are filled.
+    ![Progress-6](./images/progress_6.png)
+    - Message of game over will be shown below the grid. Create HTML section for this game-over message.
+    - Create CSS styles so that classLists can be changed.
+    - The Game over message can be hidden in transparent colour first, once the game is over, the colour can change to something opaque. 
+    ![Progress-7a](./images/progress_7a.png)
+    ![Progress-7b](./images/progress_7b.png)
+
 
 4.  Implement 
   
@@ -123,14 +143,14 @@ Use the Problem Solving Process framework to break down the project into managea
 - Anything else you'd be proud to show your parents
 
 ## :scream: Bugs to fix :bug:
-- Anything a little broken
-- Anything a LOT broken
-- Buttons to not click too many times (cause its broken :unamused:)
+- When clicking multiple times between the grid lines, at random times the whole grid will collapse and a thick black bar will replace it.
+![Bugs-1](./images/bugs_1.png)
 
 ## :sunglasses: Lessons learnt
 1.  `explorer.exe .` - To find where my sei folder is located on my computer. I needed this to place saved images into the project images folder. 
 2.  Use the browser console more - I was coding in VSC and then testing it. I would then check the elements and console. What I should be doing more of is typing into the console as there is instant feedback on what is actually happening. By doing this, I was able to grasp the concepts and understand the DOM a lot better.
 3.  Tried looking how to caption images using Markdown on github. But not really anything particularly in-built. 
+4.  The difference between classList and className. You can add/remove individual classes using classList whilst className wipes out everything and replaces it class entirely.
 
 ## :white_check_mark: Future features
 Cool things I would add if I can keep working on this
