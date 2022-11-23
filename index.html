@@ -19,6 +19,7 @@
             <section class="playerOne">
                 <h1>X</h1>
                 <h2>Player One</h2>
+                <h3>Wins: <span class="play-one-wins">0</span></h3>
             </section>
             <section class="grid-box">
                 <div id="one" class="empty"></div>
@@ -34,11 +35,14 @@
             <section class="playerTwo">
                 <h1>O</h1>
                 <h2>Player Two</h2>
+                <h3>Wins: <span class="play-two-wins">0</span></h3>
             </section>
         </section>
 
         <section class="result-section">
-            <h2 id="end-message" class="before-game">It is a DRAW. Good Game Well played</h2>
+            <h2 id="end-message"></h2>
+            <h2 id="stop-clicking"></h2>
+            <button class='button' onclick="newGame()">New Game</button>
         </section>
     </main>
     <footer>

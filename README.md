@@ -44,12 +44,12 @@ Use the Problem Solving Process framework to break down the project into managea
 1.  Keywords 
     - Game will be on browser :white_check_mark:
     - Switch Turns for players :white_check_mark:
-    - Logic for Winning
-    - Displaying which player won
+    - Logic for Winning :white_check_mark:
+    - Displaying which player won :white_check_mark:
     - Separate HTML/CSS/JS files :white_check_mark:
     - JS for DOM manipulation :white_check_mark:
-    - Deploy 
-    - Use semantic Markup
+    - Deploy :white_check_mark:
+    - Use semantic Markup :white_check_mark:
 2.  Requirements
     - Two players. Player turns will alternate until game over.
     - Grid columns and rows (via CSS)
@@ -128,9 +128,23 @@ Use the Problem Solving Process framework to break down the project into managea
     - Create CSS styles so that classLists can be changed.
     - The Game over message can be hidden in transparent colour first, once the game is over, the colour can change to something opaque. 
     ![Progress-7a](./images/progress_7a.png)
+    Image: During game
     ![Progress-7b](./images/progress_7b.png)
+    Image: After game ends
 
 
+    Part FIVE - Win Condition
+    - There are 8 possible ways to win. They all require to have 3 of the same symbol in a straight line. 
+    - Each grid box has a corresponding id number. Starting left to right, top to bottom. 
+    - List out each scenario with corresponding numbers
+    - Write the if statements and also the winning message. 
+    - Once the game is over, the user should not be able to activate another grid box. 
+    - Have additional message telling users 
+    - Have new game button to reset everything
+    - Only reveal new game button after a winner has been declared. No cheating by resetting before game finish.
+    - Build tally of wins
+    ![Progress-8](./images/progress_8.png)'
+    
 4.  Implement 
   
 
