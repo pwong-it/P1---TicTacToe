@@ -134,7 +134,8 @@ Use the Problem Solving Process framework to break down the project into managea
     - ~~Wrap the 'for' loop (previously established in part TWO) with the event listener. ~~
     - A 'for' loop was not required. 
     - Instead of console logging the turn number, change it so that it changes the textContent to the respective player's symbol "X" or "O"
-    - Once the loop finishes (when 9 turns are complete), there should be a message on the webpage that says the game is over. We won't have a winning condition for now.
+    - Once the loop finishes (when 9 turns are complete), there should be a message on the webpage that says the game is over. 
+    We won't have a winning condition for now.
     - Console log the message first and make sure it will work once all grids are filled.
     ![Progress-6](./images/progress_6.png)
     - Message of game over will be shown below the grid. Create HTML section for this game-over message.
@@ -175,7 +176,8 @@ Use the Problem Solving Process framework to break down the project into managea
     // Event.target will be used as we won't know what exactly the user will click on.
     // First, the parent of the grid will be declared
     // var parent = document.querySelector('.grid-box')
-    // Now to add the event listener to the parent and delcare a new individual grid variable as event target. 
+    // Now to add the event listener to the parent and declare a new 
+    individual grid variable as event target. 
 
     // parent.addEventListener('click', function (event) {
     //     var indGrid = event.target
@@ -183,7 +185,9 @@ Use the Problem Solving Process framework to break down the project into managea
     // })
 
     // I have put the background to change to red as a test. 
-    What I have found was since I have restricted the width of the entire gridbox in the CSS, there is not extra space around the gridbox that the user could mistakenly click on which would in turn colour the whole gridbox at once. 
+    What I have found was since I have restricted the width of the entire gridbox in the CSS, 
+    there is not extra space around the gridbox that the user could mistakenly click on which 
+    would in turn colour the whole gridbox at once. 
     // The numbers in the grid will be removed. What we want is to replace the empty "" with "X". 
     // print a grid in the console to see if it recognises the box content as "". 
     // one.textContent
@@ -206,7 +210,8 @@ Use the Problem Solving Process framework to break down the project into managea
     ```
     // Part FOUR
     // We will now wrap the 'for' loop (from part TWO) with the event listener. 
-    // If it is playerOne's turn, it should change the textContent to "X", and "O" for playerTwo
+    // If it is playerOne's turn, it should change the textContent to "X",
+    and "O" for playerTwo
 
     // parent.addEventListener('click', function (event) {
     //     var indGrid = event.target
@@ -234,7 +239,8 @@ Use the Problem Solving Process framework to break down the project into managea
     // })
 
     // The browser console is logging correctly. 
-    However, I realised that based on what I have programmed, there is only one click and the loop is running 9 times. 
+    However, I realised that based on what I have programmed, 
+    there is only one click and the loop is running 9 times. 
     The console.log is returning one,two,one,two etc
     // I will need to test this without the loop. 
     // The turn variable will need to be declared at the start
@@ -258,9 +264,12 @@ Use the Problem Solving Process framework to break down the project into managea
     We will need to prevent it from changing once it's been changed already.
     //  - Can try changing the classList instead of textContent. 
     //  - Initial classList will be "empty". 
-    //  - Once the user has clicked on a specific grid, the classList should replace to either "SymOne" or "SymTwo"
-    //  - New CSS style will need to be created. Let's put a simple background color change first to make any changes obvious
-    //  - The 'if' statement should have an && to specify to only change only if even/odd AND the classList is "empty"
+    //  - Once the user has clicked on a specific grid, 
+    the classList should replace to either "SymOne" or "SymTwo"
+    //  - New CSS style will need to be created. Let's put a simple background color 
+    change first to make any changes obvious
+    //  - The 'if' statement should have an && to specify to only change only if 
+    even/odd AND the classList is "empty"
     // 2. The game still needs to stop after the 9 turns have been completed. 
 
     // Check browser console:
@@ -283,8 +292,10 @@ Use the Problem Solving Process framework to break down the project into managea
 
     // This fixes the problem where the textContent is replaced each time it is clicked. 
     The classList is also replaced as seen in the browser console. 
-    // The next problem is the turn counter increases even if the user clicks on the same grid multiple times. 
-    To fix this, we will need to put the (turn = turn + 1) at the end of the if/else if statements
+    // The next problem is the turn counter increases even if the 
+    user clicks on the same grid multiple times. 
+    To fix this, we will need to put the (turn = turn + 1) at the end 
+    of the if/else if statements
 
     // var turn = 1
     // parent.addEventListener('click', function (event) {
@@ -302,12 +313,17 @@ Use the Problem Solving Process framework to break down the project into managea
     // })
 
     // This solves the doubling up effect problem. 
-    The only outstanding problem thus far is to end the game as soon as all the grids are NOT empty.
-    // The turn number will not go above 10, as our defined "if" statement prevents any additional
-     clicks after all boxes are filled to run the code and thereby increasing the turn number by 1. 
-    // During the very last turn, the turn will increase to 10 as that is part of the actions of the "if" statement. 
+    The only outstanding problem thus far is to end the game as soon 
+    as all the grids are NOT empty.
+    // The turn number will not go above 10, as our defined "if" 
+    statement prevents any additional
+     clicks after all boxes are filled to run the code and thereby 
+     increasing the turn number by 1. 
+    // During the very last turn, the turn will increase to 10 as 
+    that is part of the actions of the "if" statement. 
     Once it reaches 10, there should be a message that says game over. 
-    When TTT games reach the last turn, it is a draw so the message will reflect this.
+    When TTT games reach the last turn, 
+    it is a draw so the message will reflect this.
 
     // var turn = 1
     // parent.addEventListener('click', function (event) {
@@ -356,10 +372,15 @@ Use the Problem Solving Process framework to break down the project into managea
     Some of the problems that arose at this stage:
     ```
     //  Winning condition is working. However there are a few problems:
-    //  1. There is major repetition and a function would be best to decrease the size of code required.
-    //  2. Users are able to click on grids and activate them after the winner has been announced. 
-    //  3. Message to users the game has finished if they keep clicking on the grids after the game finished. 
-    //  4. Add New Game button. The grid and messages need to reset. Only reveal new game button after a winner has been declared. No cheating by resetting before game finish
+    //  1. There is major repetition and a function would be best to 
+    decrease the size of code required.
+    //  2. Users are able to click on grids and activate them after 
+    the winner has been announced. 
+    //  3. Message to users the game has finished if they keep 
+    clicking on the grids after the game finished. 
+    //  4. Add New Game button. The grid and messages need to reset. 
+    Only reveal new game button after a winner has been declared. 
+    No cheating by resetting before game finish
     //  5. Add a tally win score for both players. These will not be reset upon clicking new game. 
     ```
 
