@@ -151,10 +151,11 @@ Use the Problem Solving Process framework to break down the project into managea
 
 
 ## :rocket: Cool tech
-- Programming languages
-- Libraries
-- Animations
-- Anything else you'd be proud to show your parents
+- HTML
+- CSS
+- Javascript
+- Canva for background
+![tech-1](./images/tech_1.png)
 
 ## :scream: Bugs to fix :bug:
 - When clicking multiple times between the grid lines, at random times the whole grid will collapse and a thick black bar will replace it.

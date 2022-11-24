@@ -1,25 +1,91 @@
+/* Colours */
+/* #002D69 - Dark Blue */
+
 * {
     box-sizing: border-box;
     /* border: 1px solid red; */
     margin: 0 auto;
-
 }
 
-header {
-    text-align: center;
-    margin: 50px;
+body {
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    background-image: url(./images/Styling/XO\ background_grey.png);
+}
+
+main {
+    background-color: white;
+    max-width: 80%;
+    border: 1px solid;
+    margin-top: 100px;
+    padding-top: 100px;
+    box-shadow: 5px 10px #888888;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #002D69;
+}
+
+header nav img {
+    width: 40px;
+    margin: 10px;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+header li {
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+}
+
+.current-page {
+    border-bottom: 3px solid rgb(255, 0, 0);
+    padding-bottom: 21px;
+}
+
+.github-link {
+    padding-right: 20px;
+    padding-left: 0;
+}
+
+header .secondary-page:hover {
+    border-bottom: 3px solid white;
+    padding-bottom: 21px;
+}
+
+#site-title {
+    font-size: 5rem;
+    padding: 50px 0;
+    max-width: 80%;
+    background-color: white;
+    border: 1px solid;
+    margin-top: 100px;
+    box-shadow: 5px 10px #888888;
 }
 
 h1 {
     font-size: 5rem;
+    text-align: center;
 }
 
-body {
-    max-width: 80%;
-    margin: 0 auto;
+section {
+    background-color: white;
 }
-
-main {}
 
 .game-section {
     display: grid;
@@ -41,7 +107,6 @@ main {}
 }
 
 div {
-    border: 1px solid black;
     height: 150px;
     width: 150px;
     background-color: white;
@@ -54,14 +119,15 @@ div {
 .grid-box {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 1px;
+    gap: 3px;
     max-width: 456px;
-    background-color: black;
+    background-color: rgb(151, 151, 151);
 }
 
 .result-section {
-    margin: 20px auto;
+    padding-top: 20px;
     display: flex;
+    height: 200px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -74,4 +140,9 @@ div {
 #stop-clicking {
     color: red;
     font-size: 1.8rem;
+}
+
+.button {
+    margin: 20px;
+    padding: 10px 20px;
 }
