@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <script defer src="./script.js"></script>
 </head>
 
@@ -28,12 +33,12 @@
                             src="./images/Styling/Github Logo_white.png" alt="Github link"></a>
             </ul>
         </nav>
-        <h1 id="site-title">Tic Tac Toe</h1>
+        <h1 id="site-title" class="animate__animated animate__bounce">Tic Tac Toe</h1>
     </header>
     <main>
         <section class="game-section">
             <section class="playerOne">
-                <h1>X</h1>
+                <h1 id="oneTurn">X</h1>
                 <h2>Player One</h2>
                 <h3>Wins: <span class="play-one-wins">0</span></h3>
             </section>
@@ -49,7 +54,7 @@
                 <div id="nine" class="empty"></div>
             </section>
             <section class="playerTwo">
-                <h1>O</h1>
+                <h1 id="twoTurn">O</h1>
                 <h2>Player Two</h2>
                 <h3>Wins: <span class="play-two-wins">0</span></h3>
             </section>
@@ -57,7 +62,7 @@
 
         <section class="result-section">
             <h2 id="end-message"></h2>
-            <h2 id="stop-clicking"></h2>
+            <h2 id="stop-clicking" class="animate__animated animate__bounce"></h2>
             <button class='button' onclick="newGame()">New Game</button>
         </section>
     </main>

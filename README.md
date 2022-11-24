@@ -26,7 +26,7 @@ The app that I am building must:
 - A readme.md file with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
 
 ### Bonus extensions - Optional
-- Keep track of multiple game rounds with a win counter
+- Keep track of multiple game rounds with a win counter :white_check_mark:
 - Allow game customizable options, time limits, board size, game rounds, name & profiles etc
 - Allow players to customize their token (X, O, name, picture, avatar etc)
 - Get inventive with your styling - research CSS effects, animations to spiff things up
@@ -35,7 +35,17 @@ The app that I am building must:
 - Research web audio API and add sound effects to your game
 - Be creative! Bend the rules and give it a twist!
 
-***I will be thinking of my own extras once I am at that stage. 
+Extras
+- Added Nav bar - links to future projects, linkedIn, and Github
+- Added custom font - permanent marker
+- Added custom background
+- Added shadow border
+- Added a hover for the grid "X" and "O" so it grows slightly bigger when hovering over the characters
+- Player One/Two avatars on the side get bigger if it is that players turn. Colour is also changed.
+- The winner avatar is big, also is green
+- The "stop clicking" message now has a shaking animation
+- Title has a bounce animation upon load of the webpage. 
+- Added hover colour to nav bar project links
 
 ## :pencil2: Planning & Problem Solving
 ### General Plan

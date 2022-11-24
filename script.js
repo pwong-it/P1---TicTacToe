@@ -302,16 +302,27 @@ var stopClicking = document.querySelector('#stop-clicking')
 var playOneWins = document.querySelector('.play-one-wins')
 var playTwoWins = document.querySelector('.play-two-wins')
 var newGameButton = document.querySelector('.button')
+var oneTurn = document.querySelector('#oneTurn')
 newGameButton.style.display = 'none'
+oneTurn.style.fontSize = '8rem'
+oneTurn.style.color = '#002D69'
 
 parent.addEventListener('click', function (event) {
     var indGrid = event.target
     console.log(turn)
     if (turn % 2 === 0 && indGrid.classList[0] === 'empty' && gameFinish === 0) {
+        oneTurn.style.fontSize = '8rem'
+        oneTurn.style.color = '#002D69'
+        twoTurn.style.fontSize = '5rem'
+        twoTurn.style.color = 'black'
         indGrid.classList.replace('empty', 'symTwo')
         indGrid.textContent = 'O'
         turn = turn + 1
     } else if (turn % 2 !== 0 && indGrid.classList[0] === 'empty' && gameFinish === 0) {
+        oneTurn.style.fontSize = '5rem'
+        oneTurn.style.color = 'black'
+        twoTurn.style.fontSize = '8rem'
+        twoTurn.style.color = '#002D69'
         indGrid.classList.replace('empty', 'symOne')
         indGrid.textContent = 'X'
         turn = turn + 1
@@ -320,17 +331,30 @@ parent.addEventListener('click', function (event) {
         endGame.classList.replace('before-game', 'after-game')
         endGame.textContent = "It's a Draw. Good Game, Well Played!"
         newGameButton.style.display = 'block'
+        oneTurn.style.fontSize = '5rem'
+        oneTurn.style.color = 'black'
+        twoTurn.style.fontSize = '5rem'
+        twoTurn.style.color = 'black'
     }
     if (gameFinish === 1) {
+        stopClicking.classList.add('animate__animated', 'animate__shakeX')
         stopClicking.textContent = "Stop Clicking! The game is over."
     }
     function checkWin(id1, id2, id3, class1, class2) {
         if (id1.classList[0] === class1 && id2.classList[0] === class1 && id3.classList[0] === class1) {
+            twoTurn.style.fontSize = '5rem'
+            twoTurn.style.color = 'black'
+            oneTurn.style.fontSize = '8rem'
+            oneTurn.style.color = 'rgb(10, 119, 10)'
             endGame.textContent = "Player One won!"
             gameFinish = 1
             playOneWins.textContent = Number(playOneWins.textContent) + 1
             newGameButton.style.display = 'block'
         } else if (id1.classList[0] === class2 && id2.classList[0] === class2 && id3.classList[0] === class2) {
+            oneTurn.style.fontSize = '5rem'
+            oneTurn.style.color = 'black'
+            twoTurn.style.fontSize = '8rem'
+            twoTurn.style.color = 'rgb(10, 119, 10)'
             endGame.textContent = "Player Two won!"
             gameFinish = 1
             playTwoWins.textContent = Number(playTwoWins.textContent) + 1
@@ -372,5 +396,11 @@ function newGame() {
     nine.textContent = ''
     endGame.textContent = ''
     stopClicking.textContent = ''
+    stopClicking.className = ''
     newGameButton.style.display = 'none'
+    oneTurn.style.fontSize = '8rem'
+    oneTurn.style.color = '#002D69'
+    twoTurn.style.fontSize = '5rem'
+    twoTurn.style.color = 'black'
+
 }

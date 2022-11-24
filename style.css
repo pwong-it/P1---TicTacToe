@@ -5,6 +5,7 @@
     box-sizing: border-box;
     /* border: 1px solid red; */
     margin: 0 auto;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 body {
@@ -43,7 +44,7 @@ header ul {
 }
 
 header li {
-    padding-left: 20px;
+    padding-left: 25px;
     list-style-type: none;
 }
 
@@ -54,7 +55,7 @@ header a {
 }
 
 .current-page {
-    border-bottom: 3px solid rgb(255, 0, 0);
+    border-bottom: 3px solid rgb(230, 0, 0);
     padding-bottom: 21px;
 }
 
@@ -64,8 +65,9 @@ header a {
 }
 
 header .secondary-page:hover {
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid rgb(230, 0, 0);
     padding-bottom: 21px;
+    transition: 0.2s;
 }
 
 #site-title {
@@ -81,6 +83,7 @@ header .secondary-page:hover {
 h1 {
     font-size: 5rem;
     text-align: center;
+    font-family: 'Permanent Marker', cursive;
 }
 
 section {
@@ -96,7 +99,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: space-between;
 }
 
 .playerTwo {
@@ -110,10 +113,11 @@ div {
     height: 150px;
     width: 150px;
     background-color: white;
-    font-size: 5rem;
+    font-size: 6rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .grid-box {
@@ -122,6 +126,7 @@ div {
     gap: 3px;
     max-width: 456px;
     background-color: rgb(151, 151, 151);
+    font-family: 'Permanent Marker', cursive;
 }
 
 .result-section {
@@ -138,11 +143,29 @@ div {
 }
 
 #stop-clicking {
-    color: red;
+    color: rgb(230, 0, 0);
     font-size: 1.8rem;
 }
 
 .button {
     margin: 20px;
     padding: 10px 20px;
+}
+
+.symOne:hover {
+    font-size: 8rem;
+    transition: 0.5s all;
+}
+
+.symTwo:hover {
+    font-size: 8rem;
+    transition: 0.5s all;
+}
+
+#oneTurn {
+    transition: 0.5s all;
+}
+
+#twoTurn {
+    transition: 0.5s all;
 }
