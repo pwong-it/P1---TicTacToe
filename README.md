@@ -29,26 +29,26 @@ The app that I am building must:
 - Keep track of multiple game rounds with a win counter :white_check_mark:
 - Allow game customizable options, time limits, board size, game rounds, name & profiles etc
 - Allow players to customize their token (X, O, name, picture, avatar etc)
-- Get inventive with your styling - research CSS effects, animations to spiff things up
+- Get inventive with your styling - research CSS effects, animations to spiff things up :white_check_mark:
 - Research LocalStorage or SessionStorage to persist data locally to allow games to continue after page refresh or loss of internet connectivity
 - Use timers to display "waiting..." messages while users are waiting to be matched
 - Research web audio API and add sound effects to your game
 - Be creative! Bend the rules and give it a twist!
 
 Extras
-- Added Nav bar - links to future projects, linkedIn, and Github
-- Added custom font - permanent marker
-- Added custom background
-- Added shadow border
-- Added a hover for the grid "X" and "O" so it grows slightly bigger when hovering over the characters
-- Player One/Two avatars on the side get bigger if it is that players turn. Colour is also changed.
-- The winner avatar is big, also is green
-- The "stop clicking" message now has a shaking animation
-- Title has a bounce animation upon load of the webpage. 
-- Added hover colour to nav bar project links
-- Made the title into separate H1 tags. Then animated each word with a slight delay so that the animation bounce matches how you would say the word Tic Tac Toe. Only animates when webpage opens/refreshes.
-- Added target="_blank" rel="noopener noreferrer" to linked pages so the clicked pages will open in a new tab.
-
+- Added Nav bar - links to future projects, linkedIn, and Github :white_check_mark:
+- Added custom font - permanent marker :white_check_mark:
+- Added custom background :white_check_mark:
+- Added shadow border :white_check_mark:
+- Added a hover for the grid "X" and "O" so it grows slightly bigger when hovering over the characters :white_check_mark:
+- Player One/Two avatars on the side get bigger if it is that players turn. Colour is also changed. :white_check_mark:
+- The winner avatar is big, also is green :white_check_mark:
+- The "stop clicking" message now has a shaking animation :white_check_mark:
+- Title has a bounce animation upon load of the webpage. :white_check_mark:
+- Added hover colour to nav bar project links :white_check_mark:
+- Made the title into separate H1 tags. Then animated each word with a slight delay so that the animation bounce matches how you would say the word Tic Tac Toe. Only animates when webpage opens/refreshes. :white_check_mark:
+- Added target="_blank" rel="noopener noreferrer" to linked pages so the clicked pages will open in a new tab. :white_check_mark:
+ 
 ## :pencil2: Planning & Problem Solving
 ### General Plan
 ![Planning Photo](./images/photo-sketch.jpg)
@@ -101,7 +101,8 @@ Use the Problem Solving Process framework to break down the project into managea
     //         console.log(turn)
     //     }
     // }
-    // The console has printed the turn numbers from 1 to 9 in order. So we know this is working fine. Now we can replace the turns with "X" and "O"
+    // The console has printed the turn numbers from 1 to 9 in order. So we know this is working fine. 
+    Now we can replace the turns with "X" and "O"
     for (var turn = 1; turn < 10; turn++) {
         if (turn % 2 === 0) {
             console.log("O")
@@ -169,7 +170,8 @@ Use the Problem Solving Process framework to break down the project into managea
     Below are some "highlights" where problems arose and how I dealt with this problems. <br/> 
     ```
     // Part THREE
-    // Now we need to create the event listener that will listen for a click by the user. For now, there will not be two players and we will just test that the click works first.
+    // Now we need to create the event listener that will listen for a click by the user. 
+    For now, there will not be two players and we will just test that the click works first.
     // Event.target will be used as we won't know what exactly the user will click on.
     // First, the parent of the grid will be declared
     // var parent = document.querySelector('.grid-box')
@@ -180,7 +182,8 @@ Use the Problem Solving Process framework to break down the project into managea
     //     indGrid.style.background = 'red'
     // })
 
-    // I have put the background to change to red as a test. What I have found was since I have restricted the width of the entire gridbox in the CSS, there is not extra space around the gridbox that the user could mistakenly click on which would in turn colour the whole gridbox at once. 
+    // I have put the background to change to red as a test. 
+    What I have found was since I have restricted the width of the entire gridbox in the CSS, there is not extra space around the gridbox that the user could mistakenly click on which would in turn colour the whole gridbox at once. 
     // The numbers in the grid will be removed. What we want is to replace the empty "" with "X". 
     // print a grid in the console to see if it recognises the box content as "". 
     // one.textContent
@@ -216,7 +219,8 @@ Use the Problem Solving Process framework to break down the project into managea
     //     }
     // })
 
-    // This is not working. It is just changing the content to "X". Let's try simplifying it and let it consolelog "one" and "two" on the click
+    // This is not working. It is just changing the content to "X". 
+    Let's try simplifying it and let it consolelog "one" and "two" on the click
 
     // parent.addEventListener('click', function (event) {
     //     var indGrid = event.target
@@ -229,7 +233,9 @@ Use the Problem Solving Process framework to break down the project into managea
     //     }
     // })
 
-    // The browser console is logging correctly. However, I realised that based on what I have programmed, there is only one click and the loop is running 9 times. The console.log is returning one,two,one,two etc
+    // The browser console is logging correctly. 
+    However, I realised that based on what I have programmed, there is only one click and the loop is running 9 times. 
+    The console.log is returning one,two,one,two etc
     // I will need to test this without the loop. 
     // The turn variable will need to be declared at the start
     // console log each turn to make sure it is running in order
@@ -248,12 +254,13 @@ Use the Problem Solving Process framework to break down the project into managea
     // })
 
     // The code works in alternating the "X" and "O". However there are a few evident problems:
-    // 1. The user can click on the same grid twice, and it will change the symbol. We will need to prevent it from changing once it's been changed already.
-    //      - Can try changing the classList instead of textContent. 
-    //      - Initial classList will be "empty". 
-    //      - Once the user has clicked on a specific grid, the classList should replace to either "SymOne" or "SymTwo"
-    //      - New CSS style will need to be created. Let's put a simple background color change first to make any changes obvious
-    //      - The 'if' statement should have an && to specify to only change only if even/odd AND the classList is "empty"
+    // 1. The user can click on the same grid twice, and it will change the symbol. 
+    We will need to prevent it from changing once it's been changed already.
+    //  - Can try changing the classList instead of textContent. 
+    //  - Initial classList will be "empty". 
+    //  - Once the user has clicked on a specific grid, the classList should replace to either "SymOne" or "SymTwo"
+    //  - New CSS style will need to be created. Let's put a simple background color change first to make any changes obvious
+    //  - The 'if' statement should have an && to specify to only change only if even/odd AND the classList is "empty"
     // 2. The game still needs to stop after the 9 turns have been completed. 
 
     // Check browser console:
@@ -274,8 +281,10 @@ Use the Problem Solving Process framework to break down the project into managea
     //     turn = turn + 1
     // })
 
-    // This fixes the problem where the textContent is replaced each time it is clicked. The classList is also replaced as seen in the browser console. 
-    // The next problem is the turn counter increases even if the user clicks on the same grid multiple times. To fix this, we will need to put the (turn = turn + 1) at the end of the if/else if statements
+    // This fixes the problem where the textContent is replaced each time it is clicked. 
+    The classList is also replaced as seen in the browser console. 
+    // The next problem is the turn counter increases even if the user clicks on the same grid multiple times. 
+    To fix this, we will need to put the (turn = turn + 1) at the end of the if/else if statements
 
     // var turn = 1
     // parent.addEventListener('click', function (event) {
@@ -292,9 +301,13 @@ Use the Problem Solving Process framework to break down the project into managea
     //     }
     // })
 
-    // This solves the doubling up effect problem. The only outstanding problem thus far is to end the game as soon as all the grids are NOT empty.
-    // The turn number will not go above 10, as our defined "if" statement prevents any additional clicks after all boxes are filled to run the code and thereby increasing the turn number by 1. 
-    // During the very last turn, the turn will increase to 10 as that is part of the actions of the "if" statement. Once it reaches 10, there should be a message that says game over. When TTT games reach the last turn, it is a draw so the message will reflect this.
+    // This solves the doubling up effect problem. 
+    The only outstanding problem thus far is to end the game as soon as all the grids are NOT empty.
+    // The turn number will not go above 10, as our defined "if" statement prevents any additional
+     clicks after all boxes are filled to run the code and thereby increasing the turn number by 1. 
+    // During the very last turn, the turn will increase to 10 as that is part of the actions of the "if" statement. 
+    Once it reaches 10, there should be a message that says game over. 
+    When TTT games reach the last turn, it is a draw so the message will reflect this.
 
     // var turn = 1
     // parent.addEventListener('click', function (event) {
@@ -370,8 +383,11 @@ Use the Problem Solving Process framework to break down the project into managea
 2.  Use the browser console more - I was coding in VSC and then testing it. I would then check the elements and console. What I should be doing more of is typing into the console as there is instant feedback on what is actually happening. By doing this, I was able to grasp the concepts and understand the DOM a lot better.
 3.  Tried looking how to caption images using Markdown on github. But not really anything particularly in-built. 
 4.  The difference between classList and className. You can add/remove individual classes using classList whilst className wipes out everything and replaces it class entirely.
+5.  How to use animations taken from the web.
+6.  Using Canva for the first time. Very easy to use and powerful tool. 
 
 ## :white_check_mark: Future features
+- Optimise the webpage for mobile. 
 - Update the links on the page as projects are completed.
 - Ability to switch between avatars with arrow toggles 
 
