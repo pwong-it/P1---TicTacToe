@@ -46,6 +46,8 @@ Extras
 - The "stop clicking" message now has a shaking animation
 - Title has a bounce animation upon load of the webpage. 
 - Added hover colour to nav bar project links
+- Made the title into separate H1 tags. Then animated each word with a slight delay so that the animation bounce matches how you would say the word Tic Tac Toe. Only animates when webpage opens/refreshes.
+- Added target="_blank" rel="noopener noreferrer" to linked pages so the clicked pages will open in a new tab.
 
 ## :pencil2: Planning & Problem Solving
 ### General Plan
@@ -154,11 +156,201 @@ Use the Problem Solving Process framework to break down the project into managea
     - Only reveal new game button after a winner has been declared. No cheating by resetting before game finish.
     - Build tally of wins
     ![Progress-8](./images/progress_8.png)'
+
+
+    Part SIX - CSS Styling and Transitions/Animations
+    - Create a clean looking webpage
+    - Do not overdo it on colours and crazy animations
+    - Use KISS methodolgy
+    ![Progress-9](./images/progress_9.png)'
     
-4.  Implement 
-  
+
+4.  Implement - Coding Journey and debugging.<br/> 
+    Below are some "highlights" where problems arose and how I dealt with this problems. <br/> 
+    ```
+    // Part THREE
+    // Now we need to create the event listener that will listen for a click by the user. For now, there will not be two players and we will just test that the click works first.
+    // Event.target will be used as we won't know what exactly the user will click on.
+    // First, the parent of the grid will be declared
+    // var parent = document.querySelector('.grid-box')
+    // Now to add the event listener to the parent and delcare a new individual grid variable as event target. 
+
+    // parent.addEventListener('click', function (event) {
+    //     var indGrid = event.target
+    //     indGrid.style.background = 'red'
+    // })
+
+    // I have put the background to change to red as a test. What I have found was since I have restricted the width of the entire gridbox in the CSS, there is not extra space around the gridbox that the user could mistakenly click on which would in turn colour the whole gridbox at once. 
+    // The numbers in the grid will be removed. What we want is to replace the empty "" with "X". 
+    // print a grid in the console to see if it recognises the box content as "". 
+    // one.textContent
+    // => ''
+    // Now instead of changing the box background to red, we will replace the empty textContent from '' to 'X'. 
+
+    // parent.addEventListener('click', function (event) {
+    //     var indGrid = event.target
+    //     indGrid.textContent = 'X'
+    // })
+
+    // It actually does not require it to be replaced, it can be added immediately.
+    ```
+
+    Part FOUR was where I had the biggest problem. I had initially thought that a 'for' loop was required to run through the game. But because we only want one thing to happen per user click, a 'for' loop is not required. <br/> 
+    Some other problems that occured at this stage were:
+    -   The textContent replaces the previous symbol if clicked multiple times
+    -   Turn counter increases even if user clicks on the same grid.
+    See below for detailed code:
+    ```
+    // Part FOUR
+    // We will now wrap the 'for' loop (from part TWO) with the event listener. 
+    // If it is playerOne's turn, it should change the textContent to "X", and "O" for playerTwo
+
+    // parent.addEventListener('click', function (event) {
+    //     var indGrid = event.target
+    //     for (let turn = 1; turn < 10; turn++) {
+    //         if (turn % 2 === 0) {
+    //             indGrid.textContent = 'O'
+    //         } else {
+    //             indGrid.textContent = 'X'
+    //         }
+    //     }
+    // })
+
+    // This is not working. It is just changing the content to "X". Let's try simplifying it and let it consolelog "one" and "two" on the click
+
+    // parent.addEventListener('click', function (event) {
+    //     var indGrid = event.target
+    //     for (let turn = 1; turn < 10; turn++) {
+    //         if (turn % 2 === 0) {
+    //             console.log('two')
+    //         } else {
+    //             console.log('one')
+    //         }
+    //     }
+    // })
+
+    // The browser console is logging correctly. However, I realised that based on what I have programmed, there is only one click and the loop is running 9 times. The console.log is returning one,two,one,two etc
+    // I will need to test this without the loop. 
+    // The turn variable will need to be declared at the start
+    // console log each turn to make sure it is running in order
+    // The turn should increase by 1 at the end of each click
+
+    // var turn = 1
+    // parent.addEventListener('click', function (event) {
+    //     var indGrid = event.target
+    //     console.log(turn)
+    //     if (turn % 2 === 0) {
+    //         indGrid.textContent = 'O'
+    //     } else {
+    //         indGrid.textContent = 'X'
+    //     }
+    //     turn = turn + 1
+    // })
+
+    // The code works in alternating the "X" and "O". However there are a few evident problems:
+    // 1. The user can click on the same grid twice, and it will change the symbol. We will need to prevent it from changing once it's been changed already.
+    //      - Can try changing the classList instead of textContent. 
+    //      - Initial classList will be "empty". 
+    //      - Once the user has clicked on a specific grid, the classList should replace to either "SymOne" or "SymTwo"
+    //      - New CSS style will need to be created. Let's put a simple background color change first to make any changes obvious
+    //      - The 'if' statement should have an && to specify to only change only if even/odd AND the classList is "empty"
+    // 2. The game still needs to stop after the 9 turns have been completed. 
+
+    // Check browser console:
+    // one.classList
+    // => DOMTokenList [value: 'empty']
+
+    // var turn = 1
+    // parent.addEventListener('click', function (event) {
+    //     var indGrid = event.target
+    //     console.log(turn)
+    //     if (turn % 2 === 0 && indGrid.classList[0] === 'empty') {
+    //         indGrid.classList.replace('empty', 'symTwo')
+    //         indGrid.textContent = 'O'
+    //     } else if (turn % 2 !== 0 && indGrid.classList[0] === 'empty') {
+    //         indGrid.classList.replace('empty', 'symOne')
+    //         indGrid.textContent = 'X'
+    //     }
+    //     turn = turn + 1
+    // })
+
+    // This fixes the problem where the textContent is replaced each time it is clicked. The classList is also replaced as seen in the browser console. 
+    // The next problem is the turn counter increases even if the user clicks on the same grid multiple times. To fix this, we will need to put the (turn = turn + 1) at the end of the if/else if statements
+
+    // var turn = 1
+    // parent.addEventListener('click', function (event) {
+    //     var indGrid = event.target
+    //     console.log(turn)
+    //     if (turn % 2 === 0 && indGrid.classList[0] === 'empty') {
+    //         indGrid.classList.replace('empty', 'symTwo')
+    //         indGrid.textContent = 'O'
+    //         turn = turn + 1
+    //     } else if (turn % 2 !== 0 && indGrid.classList[0] === 'empty') {
+    //         indGrid.classList.replace('empty', 'symOne')
+    //         indGrid.textContent = 'X'
+    //         turn = turn + 1
+    //     }
+    // })
+
+    // This solves the doubling up effect problem. The only outstanding problem thus far is to end the game as soon as all the grids are NOT empty.
+    // The turn number will not go above 10, as our defined "if" statement prevents any additional clicks after all boxes are filled to run the code and thereby increasing the turn number by 1. 
+    // During the very last turn, the turn will increase to 10 as that is part of the actions of the "if" statement. Once it reaches 10, there should be a message that says game over. When TTT games reach the last turn, it is a draw so the message will reflect this.
+
+    // var turn = 1
+    // parent.addEventListener('click', function (event) {
+    //     var indGrid = event.target
+    //     console.log(turn)
+    //     if (turn % 2 === 0 && indGrid.classList[0] === 'empty') {
+    //         indGrid.classList.replace('empty', 'symTwo')
+    //         indGrid.textContent = 'O'
+    //         turn = turn + 1
+    //     } else if (turn % 2 !== 0 && indGrid.classList[0] === 'empty') {
+    //         indGrid.classList.replace('empty', 'symOne')
+    //         indGrid.textContent = 'X'
+    //         turn = turn + 1
+    //     }
+    //     if (turn === 10) {
+    //         console.log('gameover')
+    //     }
+    // })
+
+    // Let's declare a new variable for the message: 
+    // var endGame = document.querySelector('#end-message')
+    // console.log(endGame)
 
 
+    // var turn = 1
+    // parent.addEventListener('click', function (event) {
+    //     var indGrid = event.target
+    //     console.log(turn)
+    //     if (turn % 2 === 0 && indGrid.classList[0] === 'empty') {
+    //         indGrid.classList.replace('empty', 'symTwo')
+    //         indGrid.textContent = 'O'
+    //         turn = turn + 1
+    //     } else if (turn % 2 !== 0 && indGrid.classList[0] === 'empty') {
+    //         indGrid.classList.replace('empty', 'symOne')
+    //         indGrid.textContent = 'X'
+    //         turn = turn + 1
+    //     }
+    //     if (turn === 10) {
+    //         endGame.textContent = "It's a Draw. Good Game, Well Played!"
+    //     }
+    // })
+    // Now that this works, the next step will be to design the winning conditions
+    ```
+
+    For part FIVE, I tackled the winning condition. This step was relatively easy, however, it took a lot of code to accomplish it. I saw a lot of repetition so I decided to create a function which decreased the number of lines of code from 50 to 15 lines. <br/> 
+    Some of the problems that arose at this stage:
+    ```
+    //  Winning condition is working. However there are a few problems:
+    //  1. There is major repetition and a function would be best to decrease the size of code required.
+    //  2. Users are able to click on grids and activate them after the winner has been announced. 
+    //  3. Message to users the game has finished if they keep clicking on the grids after the game finished. 
+    //  4. Add New Game button. The grid and messages need to reset. Only reveal new game button after a winner has been declared. No cheating by resetting before game finish
+    //  5. Add a tally win score for both players. These will not be reset upon clicking new game. 
+    ```
+
+    ### For further details and complete code of the game, please feel free to click into any of the files in the repo.  
 
 ## :rocket: Cool tech
 - HTML
@@ -166,9 +358,11 @@ Use the Problem Solving Process framework to break down the project into managea
 - Javascript
 - Canva for background
 ![tech-1](./images/tech_1.png)
+- Used animations from animate.style website
+- Transitions
 
 ## :scream: Bugs to fix :bug:
-- When clicking multiple times between the grid lines, at random times the whole grid will collapse and a thick black bar will replace it.
+- When clicking multiple times between the grid lines, at random times the whole grid will collapse and a thick black bar will replace it. :white_check_mark:
 ![Bugs-1](./images/bugs_1.png)
 
 ## :sunglasses: Lessons learnt
@@ -178,6 +372,7 @@ Use the Problem Solving Process framework to break down the project into managea
 4.  The difference between classList and className. You can add/remove individual classes using classList whilst className wipes out everything and replaces it class entirely.
 
 ## :white_check_mark: Future features
-Cool things I would add if I can keep working on this
+- Update the links on the page as projects are completed.
+- Ability to switch between avatars with arrow toggles 
 
 

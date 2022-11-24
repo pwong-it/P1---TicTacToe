@@ -1,5 +1,7 @@
 /* Colours */
 /* #002D69 - Dark Blue */
+/* rgb(230, 0, 0); - red */
+/* rgb(151, 151, 151); - grey */
 
 * {
     box-sizing: border-box;
@@ -70,14 +72,30 @@ header .secondary-page:hover {
     transition: 0.2s;
 }
 
-#site-title {
-    font-size: 5rem;
+#site-title-box {
     padding: 50px 0;
     max-width: 80%;
     background-color: white;
     border: 1px solid;
     margin-top: 100px;
     box-shadow: 5px 10px #888888;
+    display: flex;
+    justify-content: center;
+}
+
+#tic {
+    margin: 5px;
+
+}
+
+#tac {
+    margin: 5px;
+    animation-delay: 0.2s;
+}
+
+#toe {
+    margin: 5px;
+    animation-delay: 0.4s;
 }
 
 h1 {
