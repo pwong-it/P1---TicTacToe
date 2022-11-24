@@ -68,7 +68,7 @@ Use the Problem Solving Process framework to break down the project into managea
     Part ONE - Grid
     - Create html, css, js files and link them together
     - Set out basic HTML page. Have all elements ready for DOM manipulation. Heading and Grid at this stage. CSS will be needed for the grid. 
-    ![Progress-1](./images/progress_1.png)
+    <img src="./images/photo-sketch.jpg"
     - Declare each of the grids into variables using query selector
     - Test each one to make sure the elements are able to "listen" to the click. 
 
